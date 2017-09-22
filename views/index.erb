@@ -1,21 +1,29 @@
 enter information
-<form method= "post" action = "/phonebook">
+<form method= "post" action = "/index">
 first name
-<input type = "text" name="fname" value=<%=fname%>>
+<input type = "text" name="first_name" value=>
 last name
-<input type = "text" name="lname" value=<%=lname%>>
+<input type = "text" name="last_name" value=>
 city
-<input type = "text" name="city" value=<%=city%>>
+<input type = "text" name="city" value=>
 state
-<input type = "text" name="state" value=<%=state%>>
+<input type = "text" name="state" value=>
 zip
-<input type = "text" name="zipc" value=<%=zipc%>>
+<input type = "text" name="zipcode" value=>
 phone number
-<input type = "numeric" name="pnumber" value=<%=pnumber%>>
+<input type = "text" name="phone_number" value=>
 
 <input type ="submit">
 </form>
 <%phonebook.each do|value|%>
-<tr>
-<td> <%=fname%>
+<%value['first_name']%>
+<%value['last_name']%>
+<%value['state']%>
+<%value['city']%>
+<%value['zipcode']%>
+<%value['phone_number']%>
+
+
+
+
 <%end%>

@@ -1,5 +1,5 @@
 require "sinatra"
-
+enable :sessions
 require 'pg'
  load './local_env.rb' if File.exist?('./local_env.rb') 
  
@@ -17,26 +17,19 @@ dbname: ENV['db_name'],
  
  
  get '/' do 
-     phonebook = db.exec("Select * From user_given_data_table") 
+     phonebook = db.exec("Select * From phonebook") 
      erb :index, locals: {phonebook: phonebook} 
  end 
  
  
  post '/index' do 
-     fname = params[:fname] 
-     lname = params[:lname] 
+     first_name = params[:first_name] 
+     last_name = params[:last_name] 
      street = params[:street] 
      city = params[:city] 
      state = params[:state] 
      zip = params[:zipc] 
-     phone = params[:phone_number]
-   
-
-
-
-
-
-
-
-db.exec("INSERT INTO phonebook(first_name, last_name, street_address, city, state, zip, cell_phone, home_phone, work_phone) VALUES('#{fname}', '#{lname}', '#{street}', '#{city}', '#{state}', '#{zip}', '#{phone}')");
- end
+     phone_number = params[:phone_number]
+db.exec("INSERT INTO public.phonebook(first_name, last_name, street, city, state, zip, phone_number) VALUES('#{first_name}', '#{last_name}', '#{street}', '#{city}', '#{state}', '#{zip}', '#{phone_number}')");
+redirect '/index?first_name=' + first_name + '&last_name' + last_name + '&street' + street + '&city' + city + '&state' + state + '&zip' + zip + '&phone_number' + phone_number
+end
