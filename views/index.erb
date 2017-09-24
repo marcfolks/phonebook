@@ -1,23 +1,26 @@
-enter information
-<form method= "post" action = "/index">
-first name
-<input type = "text" name="first_name" value=>
-last name
-<input type = "text" name="last_name" value=>
-city
-<input type = "text" name="city" value=>
-state
-<input type = "text" name="state" value=>
-zip
-<input type = "text" name="zipcode" value=>
-phone number
-<input type = "text" name="phone_number" value=>
+<p>enter information<p>
+<p><form method= "post" action = '/'><p>
+<p>first name<p>
+<p><input type = "text" name="first_name" ><p>
+<p>last name<p>
+<p><input type = "text" name="last_name" ><p>
+<p>street address<p>
+<p><input type="text" name"street"><p>
+<p>city<p>
+<p><input type = "text" name="city" ><p>
+<p>state<p>
+<p><input type = "text" name="state"><p>
+<p>zipcode<p>
+<p><input type = "text" name="zipcode"><p>
+<p>phone number
+<p><input type = "text" name="phone_number" ><p>
 
 <input type ="submit">
 </form>
 <%phonebook.each do|value|%>
 <%value['first_name']%>
 <%value['last_name']%>
+<%value['street']%>
 <%value['state']%>
 <%value['city']%>
 <%value['zipcode']%>

@@ -1,0 +1,25 @@
+first
+<%=first_name%>
+last
+<%=last_name%>
+city
+<%=city%>
+state
+<%=state%>
+zipcode
+<%=zipcode%>
+phone_number
+
+<%phonebook.each do|value|%>
+<%value['first_name']%>
+<%value['last_name']%>
+<%value['street']%>
+<%value['state']%>
+<%value['city']%>
+<%value['zipcode']%>
+<%value['phone_number']%>
+
+
+
+
+<%end%>
